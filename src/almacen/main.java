@@ -25,6 +25,7 @@ import org.w3c.dom.Text;
 
 
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -136,6 +137,8 @@ public class main {
 	
 	
 	public static void main(String[] parametro) throws IOException {
+		
+		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int opcion1=1;
 		listapedidos pedidoslist=new listapedidos();
@@ -145,21 +148,20 @@ public class main {
 		
 		do {	
 			System.out.println("1-Añadir pedido");
-			System.out.println("2-Mostrar pedidos");
-			System.out.println("3-Añadir cliente");
-			System.out.println("4.-Añadir producto");
-			System.out.println("5.-Salir");
+			System.out.println("2-Añadir cliente");
+			System.out.println("3.-Añadir producto");
+			System.out.println("4.-Salir");
        
 			int opcion = Integer.parseInt(reader.readLine());
 			opcion1=opcion;
 			switch(opcion1) {
 				case  1:
-					
+					clientes cl=new clientes();
 					System.out.println("Introduzca el email del cliente:");
 					String email=reader.readLine();
 					for(int i=0;i<clienteslist.getsizelista();i++) {
 						if(clienteslist.get(i).get_email()==email) {
-							clientes cl=new clientes();
+							
 							cl=clienteslist.get(i);
 							i=clienteslist.getsizelista()+2;
 						}
@@ -193,20 +195,24 @@ public class main {
 					direccion destino =new direccion();
 					destino=generardireccion();
 					
-					
+					System.out.println("Fecha de entrega:");
+					String fecha=reader.readLine();
+					pedidos pedido=new pedidos(pr,cant,destino,cl,fecha);
+					pedidoslist.add(pedido);
 					break;
 				case 2:
-					
+					clientes clien=new clientes();
+					clien=generarcliente();
+					clienteslist.add(clien);
 					break;
 				case 3:
-					
+					producto product=new producto();
+					product=generarproducto();
+					productoslist.add(product);
 					break;
 				case 4:
-					
 					break;
-				case 5:
-					System.out.println("Hasta luego!");
-					break;
+
 				default:
 					
 					System.out.println("No se ha reconocido la opción, por favor vuelva a introducirla");
@@ -215,8 +221,8 @@ public class main {
 				
 			}
 			
-		}while(opcion1!=5);
-        
+		}while(opcion1!=4);
+		System.out.println("Hasta luego!");
         
         
     }
