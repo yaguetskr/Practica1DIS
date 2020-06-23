@@ -1,28 +1,32 @@
 package almacen;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class pedidos {
 
-	producto[] productos;
-	int cantidad;
+	listaproductos productos;
+	List<Integer> cantidad;
 	direccion dir_entrega;
 	String destinatario;
 	String fecha_entrega;
 	
 	
-	public void set_productos(producto[] p) 
+	public void set_productos(listaproductos p) 
 	{
 		productos=p;
 	}
-	public producto[] get_productos() 
+	public listaproductos get_productos() 
 	{
 	return productos;		
 	}
 	
-	public void set_cantidad(int p) 
+	public void set_cantidad(List<Integer> p) 
 	{
 		cantidad=p;
 	}
-	public int get_cantidad() 
+	public List<Integer> get_cantidad() 
 	{
 	return cantidad;		
 	}
@@ -50,7 +54,7 @@ public class pedidos {
 	{
 	return fecha_entrega;		
 	}
-    public pedidos(producto[] p,int c,direccion d,String dest,String fcha)
+    public pedidos(listaproductos p,List<Integer> c,direccion d,String dest,String fcha)
     {
         productos = p;
         cantidad = c;
@@ -60,8 +64,8 @@ public class pedidos {
     }
 	public pedidos() 
 	{
-		productos = new producto[10];
-		cantidad = 0;
+		productos = new listaproductos();
+		cantidad = new ArrayList<Integer>();
 		dir_entrega = new direccion();
 		destinatario = "0";
 		fecha_entrega = "0";

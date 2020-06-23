@@ -1,23 +1,30 @@
 package almacen;
 
-import java.util.ArrayList;
 
 
 
-public class listaproductos {
-	
-	private ArrayList<producto> productos;
+
+public class listaproductos  {
+
+	private producto[] productos;
 
 	public listaproductos() {
-		productos = new ArrayList<producto>();
+		productos = new producto[20];
 	}
 	
 	
 	public int getsizelista() {
-		return productos.size();
+		return 20;
+		
 	}
 	
-	public void addproductos(producto e) {
-		productos.add(e);
+	public void addproductos(producto e,int indice) {
+		productos[indice]=e;
+		
 	}
+	
+	public producto get(int i) {
+		return productos[i];
+	}
+	
 }

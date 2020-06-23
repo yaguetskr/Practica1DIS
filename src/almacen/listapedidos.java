@@ -4,20 +4,24 @@ import java.util.ArrayList;
 
 
 
-public class listapedidos {
+
+public class listapedidos   {
+
 	
-	private ArrayList<pedidos> pedidos;
+	private pedidos[] pedidos;
 
 	public listapedidos() {
-		pedidos = new ArrayList<pedidos>();
+		pedidos = new pedidos[10];
 	}
 	
 	public int getsizelista() {
-		return pedidos.size();
+		return 10;
 	}
 	
-	public void addpedidos(pedidos e) {
-		pedidos.add(e);
+	public void addpedidos(pedidos e,int indice) {
+		pedidos[indice]=e;
 	}
+	
+	
 	
 }

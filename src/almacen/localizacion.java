@@ -1,5 +1,6 @@
 package almacen;
 
+
 public class localizacion {
 
 	String pasillo;
@@ -49,3 +50,4 @@ public class localizacion {
 		
 	}
 }
+

@@ -1,5 +1,7 @@
 package almacen;
 
+
+
 public class producto {
     
     int Codigo;
