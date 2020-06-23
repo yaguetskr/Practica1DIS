@@ -2,12 +2,17 @@ package almacen;
 
 
 
-
-
 public class listaproductos  {
 
 	private producto[] productos;
-
+	
+	@Override
+	public String toString() {
+		return "\n\t"+productos +"\n";
+	}
+	
+	
+	
 	public listaproductos() {
 		productos = new producto[20];
 	}

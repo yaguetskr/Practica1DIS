@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -119,16 +121,37 @@ public class main {
 	    return client;   
 		
 	}
-	
+	public static void writeToFile(String xml, String fileName) throws IOException {
+	    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+	    try {
+			writer.write(xml);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			writer.close();
+		}
+	}
 	
 	public static void main(String[] parametro) throws IOException {
 		
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int opcion1=1;
+		//vectores del programa
 		listapedidos pedidoslist=new listapedidos();
 		listaproductos productoslist=new listaproductos();
 		listaclientes clienteslist=new listaclientes();
+		//array list del xml
+		ArrayList<almacenclase> Almacen = new ArrayList<almacenclase>();
+		ArrayList<producto> lpro = new ArrayList<producto>();
+		ArrayList<clientes> lcli = new ArrayList<clientes>();
+		ArrayList<pedidos> lpedi = new ArrayList<pedidos>();
+		
+		
+		
+		
+		almacenclase a;
 		int indice_clientes=0;
 		int indice_productos=0;
 		int indice_pedidos=0;
@@ -215,6 +238,7 @@ public class main {
 					pedidos pedido=new pedidos(pr,cant,destin,cl,fecha);
 						pedidoslist.addpedidos(pedido,indice_pedidos);
 						indice_pedidos++;
+						lpedi.add(pedido);
 					}
 				
 					
@@ -225,6 +249,7 @@ public class main {
 					clien=generarcliente();
 					clienteslist.addclientes(clien,indice_clientes);
 					indice_clientes++;
+					lcli.add(clien);
 					
 					break;
 				case 3:
@@ -232,10 +257,28 @@ public class main {
 					product=generarproducto();
 					productoslist.addproductos(product, indice_productos);
 					indice_productos++;
+					lpro.add(product);
 					break;
 				case 4:
 					
-		
+					a=new almacenclase(lcli,lpedi,lpro);
+					Almacen.add(a);
+				
+					String header = "<?xml version=\"1.0\" encoding=\"UTF-8\">\n";
+					String root = "<Almacen>\n";
+					String xml = "";
+					xml += header + root;
+					for (almacenclase p: Almacen) {
+						xml += a;
+						System.out.println(xml);
+					}
+					String close_root = "\n</Almacen>";
+					System.out.println(xml);
+					xml += close_root;
+					writeToFile(xml, "xmlFile.xml");
+
+					
+				
 					
 					
 					break;

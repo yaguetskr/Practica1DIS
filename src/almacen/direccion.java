@@ -10,6 +10,11 @@ public class direccion {
 	String Poblacion ;
 	String pais;
 	
+	
+	@Override
+	public String toString() {
+		return "\n\t\t\t\t<calle>"+calle +"</calle>\n\t\t\t\t<Numero>"+Numero+"</Numero>\n\t\t\t\t< Codigo Postal>"+ Codigo_Postal+"</ Codigo Postal>\n\t\t\t\t<Poblacion>"+Poblacion+"</Poblacion>\n\t\t\t\t<pais>"+pais+"</pais>\n\t\t\t";
+	}
     //getters y setters
 	public void set_calle(String p) 
 	{

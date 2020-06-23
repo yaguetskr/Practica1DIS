@@ -6,8 +6,14 @@ package almacen;
 public class listapedidos   {
 
 	
+	
 	private pedidos[] pedidos;
 
+	@Override
+	public String toString() {
+		return "\n\t"+pedidos +"\n";
+	}
+	
 	public listapedidos() {
 		pedidos = new pedidos[10];
 	}

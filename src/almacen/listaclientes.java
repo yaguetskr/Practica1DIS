@@ -2,11 +2,18 @@ package almacen;
 
 
 
+import java.util.ArrayList;
+
 public class listaclientes  {
 
 	
 	private clientes[] clientes ;
 
+	public String toString() {
+		return "\n\t"+clientes+"\n";
+	}
+	
+	
 	public listaclientes() {
 		clientes = new clientes[10];
 	}

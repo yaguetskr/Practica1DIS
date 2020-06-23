@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("unused")
 public class pedidos {
@@ -14,7 +16,11 @@ public class pedidos {
 	clientes destinatario;
 	String fecha_entrega;
 	
-	
+	@Override
+	public String toString() {
+		return "\n\t\t<pedido>\n\t\t\t<listaproductos>"+productos +"\t\t\t</listaproductos>\n\t\t\t<cantidades>"+cantidad+"</cantidades>\n\t\t\t<direccion>"+dir_entrega+"</direccion>\n\t\t\t<destinatario>"+destinatario+"\t\t\t</destinatario>\n\t\t\t<fecha Entrega>"+fecha_entrega+"</fecha Entrega>\n\t\t</pedido>";
+	}
+
 	public void set_productos(listaproductos p) 
 	{
 		productos=p;

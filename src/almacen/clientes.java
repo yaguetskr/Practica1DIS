@@ -4,7 +4,6 @@ package almacen;
 import almacen.direccion;
 
 
-
 @SuppressWarnings("unused")
 public class clientes {
     //declaracion de variables
@@ -14,6 +13,11 @@ public class clientes {
 	String telefono;
 	direccion dir;
 	
+	
+	@Override
+	public String toString() {
+		return "\n\t\t<cliente>\n\t\t\t< Nombre>" +Nombre +"</ Nombre>\n\t\t\t<apellidos>"+apellidos+"</apellidos>\n\t\t\t<email>"+ email+"</email>\n\t\t\t<telefono>"+ telefono+"</ telefono>\n\t\t\t<direccion>"+dir+"</direccion>\n\t\t</cliente>\n";
+	}
 	// getters y setters
 	public void set_Nombre(String p) 
 	{

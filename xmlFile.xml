@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8">
+<Almacen>
+
+	<Lista clientes>[
+		<cliente>
+			< Nombre>2</ Nombre>
+			<apellidos>2</apellidos>
+			<email>2</email>
+			<telefono>2</ telefono>
+			<direccion>
+				<calle>2</calle>
+				<Numero>2</Numero>
+				< Codigo Postal>2</ Codigo Postal>
+				<Poblacion>2</Poblacion>
+				<pais>2</pais>
+			</direccion>
+		</cliente>
+]
+	</Lista clientes>
+
+	<Lista Pedidos>[
+		<pedido>
+			<listaproductos>
+	[Lalmacen.producto;@15db9742
+			</listaproductos>
+			<cantidades>[I@6d06d69c</cantidades>
+			<direccion>
+				<calle>2</calle>
+				<Numero>2</Numero>
+				< Codigo Postal>2</ Codigo Postal>
+				<Poblacion>2</Poblacion>
+				<pais>2</pais>
+			</direccion>
+			<destinatario>
+		<cliente>
+			< Nombre>2</ Nombre>
+			<apellidos>2</apellidos>
+			<email>2</email>
+			<telefono>2</ telefono>
+			<direccion>
+				<calle>2</calle>
+				<Numero>2</Numero>
+				< Codigo Postal>2</ Codigo Postal>
+				<Poblacion>2</Poblacion>
+				<pais>2</pais>
+			</direccion>
+		</cliente>
+			</destinatario>
+			<fecha Entrega>4</fecha Entrega>
+		</pedido>]
+	</Lista Pedidos>
+
+	<Lista Productos>[
+		<producto>
+			<codigo>3</codigo>
+			<nombre>3</nombre>
+			<descripcion>3</descripcion>
+			<stock>3</stock>
+			<localizacion>
+				<pasillo>3</pasillo>
+				<estanteria>3</estanteria>
+				<estante>3</estante>
+			</localizacion>
+			<pendientes>false</pendientes>
+		</prodcuto>]
+	</Lista Productos>
+
+</Almacen>

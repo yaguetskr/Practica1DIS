@@ -10,6 +10,13 @@ public class producto {
     int stock;
     localizacion Localiza;
     boolean pendientes;
+
+
+	@Override
+	public String toString() {
+		return "\n\t\t<producto>\n\t\t\t<codigo>"+Codigo +"</codigo>\n\t\t\t<nombre>"+Nombre+"</nombre>\n\t\t\t<descripcion>"+descripcion+"</descripcion>\n\t\t\t<stock>"+stock+"</stock>\n\t\t\t<localizacion>"+Localiza+"\t\t\t</localizacion>\n\t\t\t<pendientes>"+pendientes+"</pendientes>\n\t\t</prodcuto>";
+	}
+
     
     public void set_Codigo(int p)
     {

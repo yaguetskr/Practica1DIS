@@ -7,6 +7,11 @@ public class localizacion {
 	String estanteria;
 	String estante;
 	
+	@Override
+	public String toString() {
+		return "\n\t\t\t\t<pasillo>"+pasillo +"</pasillo>\n\t\t\t\t<estanteria>"+estanteria+"</estanteria>\n\t\t\t\t<estante>"+estante+"</estante>\n";
+	}
+	
 	public void set_pasillo(String p) 
 	{
 		pasillo=p;
@@ -50,4 +55,3 @@ public class localizacion {
 		
 	}
 }
-
