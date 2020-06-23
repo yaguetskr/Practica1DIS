@@ -6,14 +6,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-
-
-
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+
 
 public class main {
 	
@@ -235,6 +234,10 @@ public class main {
 					indice_productos++;
 					break;
 				case 4:
+					
+		
+					
+					
 					break;
 
 				default:
