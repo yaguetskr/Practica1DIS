@@ -3,16 +3,30 @@
 
 	<Lista clientes>[
 		<cliente>
-			< Nombre>2</ Nombre>
-			<apellidos>2</apellidos>
-			<email>2</email>
-			<telefono>2</ telefono>
+			< Nombre>jorge</ Nombre>
+			<apellidos>delgado</apellidos>
+			<email>jorge@email.com</email>
+			<telefono>543543543</ telefono>
 			<direccion>
-				<calle>2</calle>
+				<calle>calle1</calle>
+				<Numero>1</Numero>
+				< Codigo Postal>28230</ Codigo Postal>
+				<Poblacion>madird</Poblacion>
+				<pais>españa</pais>
+			</direccion>
+		</cliente>
+, 
+		<cliente>
+			< Nombre>santiago</ Nombre>
+			<apellidos>cabello</apellidos>
+			<email>yago@gmail</email>
+			<telefono>654654654</ telefono>
+			<direccion>
+				<calle>valle 3</calle>
 				<Numero>2</Numero>
-				< Codigo Postal>2</ Codigo Postal>
-				<Poblacion>2</Poblacion>
-				<pais>2</pais>
+				< Codigo Postal>23345</ Codigo Postal>
+				<Poblacion>cataluña</Poblacion>
+				<pais>cataluña</pais>
 			</direccion>
 		</cliente>
 ]
@@ -25,41 +39,41 @@
 			</listaproductos>
 			<cantidades>[I@6d06d69c</cantidades>
 			<direccion>
-				<calle>2</calle>
+				<calle>valle 3</calle>
 				<Numero>2</Numero>
-				< Codigo Postal>2</ Codigo Postal>
-				<Poblacion>2</Poblacion>
-				<pais>2</pais>
+				< Codigo Postal>23345</ Codigo Postal>
+				<Poblacion>cataluña</Poblacion>
+				<pais>cataluña</pais>
 			</direccion>
 			<destinatario>
 		<cliente>
-			< Nombre>2</ Nombre>
-			<apellidos>2</apellidos>
-			<email>2</email>
-			<telefono>2</ telefono>
+			< Nombre>santiago</ Nombre>
+			<apellidos>cabello</apellidos>
+			<email>yago@gmail</email>
+			<telefono>654654654</ telefono>
 			<direccion>
-				<calle>2</calle>
+				<calle>valle 3</calle>
 				<Numero>2</Numero>
-				< Codigo Postal>2</ Codigo Postal>
-				<Poblacion>2</Poblacion>
-				<pais>2</pais>
+				< Codigo Postal>23345</ Codigo Postal>
+				<Poblacion>cataluña</Poblacion>
+				<pais>cataluña</pais>
 			</direccion>
 		</cliente>
 			</destinatario>
-			<fecha Entrega>4</fecha Entrega>
+			<fecha Entrega>5</fecha Entrega>
 		</pedido>]
 	</Lista Pedidos>
 
 	<Lista Productos>[
 		<producto>
-			<codigo>3</codigo>
-			<nombre>3</nombre>
-			<descripcion>3</descripcion>
-			<stock>3</stock>
+			<codigo>1</codigo>
+			<nombre>movil</nombre>
+			<descripcion>movil </descripcion>
+			<stock>5</stock>
 			<localizacion>
-				<pasillo>3</pasillo>
+				<pasillo>2</pasillo>
 				<estanteria>3</estanteria>
-				<estante>3</estante>
+				<estante>4</estante>
 			</localizacion>
 			<pendientes>false</pendientes>
 		</prodcuto>]
