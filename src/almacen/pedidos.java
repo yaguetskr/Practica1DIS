@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+@SuppressWarnings("unused")
 public class pedidos {
 
 	listaproductos productos;
-	List<Integer> cantidad;
+	 int[] cantidad;
 	direccion dir_entrega;
-	String destinatario;
+	clientes destinatario;
 	String fecha_entrega;
 	
 	
@@ -22,11 +24,11 @@ public class pedidos {
 	return productos;		
 	}
 	
-	public void set_cantidad(List<Integer> p) 
+	public void set_cantidad( int[] p) 
 	{
 		cantidad=p;
 	}
-	public List<Integer> get_cantidad() 
+	public int[] get_cantidad() 
 	{
 	return cantidad;		
 	}
@@ -38,11 +40,11 @@ public class pedidos {
 	{
 	return dir_entrega;		
 	}
-	public void set_destinatario(String p) 
+	public void set_destinatario(clientes p) 
 	{
 		destinatario = p;
 	}
-	public String get_destinatario() 
+	public clientes get_destinatario() 
 	{
 	return destinatario;		
 	}
@@ -54,7 +56,7 @@ public class pedidos {
 	{
 	return fecha_entrega;		
 	}
-    public pedidos(listaproductos p,List<Integer> c,direccion d,String dest,String fcha)
+    public pedidos(listaproductos p, int[] c,direccion d,clientes dest,String fcha)
     {
         productos = p;
         cantidad = c;
@@ -65,10 +67,12 @@ public class pedidos {
 	public pedidos() 
 	{
 		productos = new listaproductos();
-		cantidad = new ArrayList<Integer>();
+		cantidad = new  int[20];
 		dir_entrega = new direccion();
-		destinatario = "0";
+		destinatario = new clientes();
 		fecha_entrega = "0";
+	
 	}
+
 }
 

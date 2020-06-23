@@ -6,21 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Text;
+
 
 
 
@@ -144,6 +130,11 @@ public class main {
 		listapedidos pedidoslist=new listapedidos();
 		listaproductos productoslist=new listaproductos();
 		listaclientes clienteslist=new listaclientes();
+		int indice_clientes=0;
+		int indice_productos=0;
+		int indice_pedidos=0;
+		
+		
 		
 		
 		do {	
@@ -157,58 +148,91 @@ public class main {
 			switch(opcion1) {
 				case  1:
 					clientes cl=new clientes();
+					int salir=0;
+					int indice=-1;
+					String aux="";
 					System.out.println("Introduzca el email del cliente:");
 					String email=reader.readLine();
-					for(int i=0;i<clienteslist.getsizelista();i++) {
-						if(clienteslist.get(i).get_email()==email) {
+					for(int i=0;i<clienteslist.getsizelista()&&salir==0;i++) {
+						aux=clienteslist.get(i).email;
+						if(aux.equals(email)) {
 							
 							cl=clienteslist.get(i);
-							i=clienteslist.getsizelista()+2;
+							salir=1;
+							indice=i;
+						
 						}
-						if(i==clienteslist.getsizelista()) {
-							System.out.println("No se encontro el cliente");
-							break;
-						}
+						
 					}
-					List<Integer> cant=new ArrayList<Integer>();
+					if(salir==0) {
+						System.out.println("No se encontro el cliente");
+						System.out.println("registre el cliente antes de añadir pedido\n");
+						break;
+					}
+					
+					int[] cant=new int[20];
+					int indice_cant=0;
 					int mas;
 					listaproductos pr=new listaproductos();
+					int indice_pr=0;
 					do {
 						System.out.println("Introduzca el codigo del producto");
 						int codigo=Integer.parseInt(reader.readLine());
 						for(int i=0;i<productoslist.getsizelista();i++) {
 							if(productoslist.get(i).get_Codigo()==codigo) {
 								System.out.println("Cuantas unidades quiere del producto?");
-								cant.add(Integer.parseInt(reader.readLine()));
-								pr.addproducto(productoslist.get(i));
+								cant[indice_cant]=(Integer.parseInt(reader.readLine()));
+								indice_cant++;
+								pr.addproductos(productoslist.get(i),indice_pr);
+								indice_pr++;
 								i=productoslist.getsizelista()+2;
 							}
 							if(i==productoslist.getsizelista()) {
 								System.out.println("No se encontro el producto");
 							}
 						}
-						System.out.println("Añadir mas productos? (1.-SI)");
+						System.out.println("Añadir mas productos? (1.-SI  	Cualquier tecla.-NO)");
 						mas=Integer.parseInt(reader.readLine());
 						
 					}while(mas==1);
 					
-					direccion destino =new direccion();
-					destino=generardireccion();
 					
-					System.out.println("Fecha de entrega:");
-					String fecha=reader.readLine();
-					pedidos pedido=new pedidos(pr,cant,destino,cl,fecha);
-					pedidoslist.add(pedido);
+					if(salir==1) {
+				
+						String calle =clienteslist.get(indice).get_dir().get_calle();  
+						
+						int num =clienteslist.get(indice).get_dir().get_Numero();  
+					       
+						int codp = clienteslist.get(indice).get_dir().get_Codigo_Postal();  
+					       
+						String pobl =clienteslist.get(indice).get_dir().get_Poblacion();  
+    
+						String pais =clienteslist.get(indice).get_dir().get_pais();  
+						direccion destin=new direccion(calle,num,codp,pobl,pais);
+
+						System.out.println("Fecha de entrega:");
+						String fecha=reader.readLine();
+					
+					pedidos pedido=new pedidos(pr,cant,destin,cl,fecha);
+						pedidoslist.addpedidos(pedido,indice_pedidos);
+						indice_pedidos++;
+					}
+				
+					
+					
 					break;
 				case 2:
 					clientes clien=new clientes();
 					clien=generarcliente();
-					clienteslist.add(clien);
+					clienteslist.addclientes(clien,indice_clientes);
+					indice_clientes++;
+					
 					break;
 				case 3:
 					producto product=new producto();
 					product=generarproducto();
-					productoslist.add(product);
+					productoslist.addproductos(product, indice_productos);
+					indice_productos++;
 					break;
 				case 4:
 					break;
