@@ -1,7 +1,9 @@
 package almacen;
 
 
+import almacen.direccion;
 
+@SuppressWarnings("unused")
 public class clientes {
     //declaracion de variables
 	String Nombre;
@@ -51,7 +53,7 @@ public class clientes {
 	{
 	return dir;	
 	}
-    //constructor por parametros
+    //constructor por parameters
     public clientes(String nom,String apell,String mail,String tlf,direccion direcc)
     {
         Nombre=nom;
